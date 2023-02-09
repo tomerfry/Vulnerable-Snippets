@@ -21,7 +21,7 @@ int get_url_from_socket(int sock) {
 		}
 		char temp =  isalnum(c) || c == '.' || c == '?' || c == '_' || c == '-' || c == '#' || c == ';' ? c : (c == ' ' ? '+' : 0);
 		if (!temp) {
-			char *encoded = malloc(3);
+			char *encoded = malloc(4);
 			sprintf(encoded, "%%%02X", c);
 			strcat(input, encoded);
 		}
